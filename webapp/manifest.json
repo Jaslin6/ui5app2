@@ -1,0 +1,98 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "ui5app2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.6",
+      "toolsId": "c8c36cae-889c-4908-8c27-bd23f893935a"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.139.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5app2.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5app2.view",
+        "async": true,
+        "viewPath": "ui5app2.view"
+      },
+      "routes": [
+        {
+          "name": "RouteRoot",
+          "pattern": ":?query:",
+          "target": [
+            "TargetRoot"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetRoot": {
+          "id": "Root",
+          "name": "Root"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ui5app2.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
