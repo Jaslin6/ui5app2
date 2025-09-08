@@ -1,6 +1,22 @@
 <mvc:View controllerName="ui5app2.controller.Root"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
+
+    <headerContent>
+         <Button id="_IDGenButton1" text="{i18n>load}" type="Emphasized"/>
+    </headerContent>
+      
+      <content>
+
+       <core:Fragment id="_IDGenFragment" 
+        fragmentName= "ui5app2.view.fragments.BankDetails"
+        type="XML"/>
+
+        <Button id="_IDGenButton" text="{i18n>info}" type="Neutral" class="sapUiSmallMarginBegin" press=".onOpenDialog"/>
+       
+      </content>
+
     </Page>
 </mvc:View>
