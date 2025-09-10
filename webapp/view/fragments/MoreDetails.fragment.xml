@@ -5,38 +5,40 @@ xmlns= "sap.m">
 <Dialog id="Dialog" title="{i18n>dlgtitle}">
 
 
-      <VBox id="_IDGenVBox" class="sapUiSmallMargin" >
+      <VBox id="_IDGenVBox" binding= "{oBankDetails>/bankDetails}" class="sapUiSmallMargin" >
        
 
       <HBox id="_IDGenHBox4" > 
         <Label id="_IDGenLabel3"  text="{i18n>accnum}" class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText3" text="3456789*******"></Text>
+        <Text id="_IDGenText3" text="{oBankDetails>AccountNum}"></Text>
       </HBox> 
 
       <HBox id="_IDGenHBox5" > 
         <Label id="_IDGenLabel4"  text="{i18n>hldname}" class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText4" text="Jaslin"></Text>
+        <Text id="_IDGenText4" text="{oBankDetails>Name}"></Text>
       </HBox>
 
       <HBox id="_IDGenHBox6"> 
         <Label id="_IDGenLabel5"  text="{i18n>code}" class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText5" text="0000*******"></Text>
+        <Text id="_IDGenText5" text="{oBankDetails>Ifsc}"></Text>
       </HBox> 
 
       <HBox id="_IDGenHBox7"> 
         <Label id="_IDGenLabel6"  text="{i18n>custID} " class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText6" text="4356781987"></Text>
-      </HBox> 
-
-      <HBox id="_IDGenHBox8" > 
-        <Label id="_IDGenLabel7"  text="{i18n>add}" class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText7" text="Coimbatore"></Text>
+        <Text id="_IDGenText6" text="{oBankDetails>custID}"></Text>
       </HBox> 
 
       <HBox id="_IDGenHBox9"> 
         <Label id="_IDGenLabel8"  text="{i18n>bal} " class="sapUiSmallMarginEnd"/>
-        <Text id="_IDGenText8" text="80000"></Text>
+        <Text id="_IDGenText8" text="{oBankDetails>bal}"></Text>
       </HBox> 
+
+      <HBox id="_IDGenHBox8" > 
+        <Label id="_IDGenLabel7"  text="{i18n>add}" class="sapUiSmallMarginEnd"/>
+        <Text id="_IDGenText7" text="{oBankDetails>add/houseNo}, {oBankDetails>add/street}, {oBankDetails>add/city}- {oBankDetails>add/postalcode},
+                                     {oBankDetails>add/state}, {oBankDetails>add/country}"></Text>
+      </HBox> 
+
 
       </VBox>  
   

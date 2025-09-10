@@ -1,0 +1,42 @@
+{
+    "bankDetails":{
+                    "AccountNum": "2345698764",
+                    "Name": "Jaslin",
+                    "Ifsc": "00050",
+                    "custID": "4356781987"  ,
+                    "bal":"80000",
+                    "add": {
+                        "city": "Coimbatore",
+                        "postalcode": "641108",
+                        "houseNo": "431/13",
+                        "street": "Thiruvalluvar Nagar",
+                        "state": "TamilNadu", 
+                        "country": "India"
+                      }
+                    
+                },
+                   "carddetails":[
+                    {
+                        "cardtype": "Debit Card",
+                        "cardNo": "1234509876523456",
+                        "cardCompany": "Master Card",
+                        "assignmentdate": "assigned on 01 Sep 2023",
+                        "state": true
+                      
+                    },
+                    {
+                        "cardtype": "Visa",
+                        "cardNo": "0987657687653547",
+                        "cardCompany": "Credit Card",
+                        "assignmentdate": "assigned on 06 Jun 2024",
+                        "state": false
+                   },
+                   {
+                        "cardtype": "Debit Card",
+                        "cardNo": "4573256780987654",
+                        "cardCompany": "Master Card",
+                        "assignmentdate": "assigned on 09 Oct 2024",
+                        "state": true
+                    }
+                   ]
+                }                  

@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+xmlns:core = "sap.ui.core"
+xmlns= "sap.m">
+
+<Panel id="Panel2" expandable="true" headerText="{i18n>Panel2title}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+
+  <List id="myList" items="{oBankDetails>/carddetails}" width="60%">
+		<items>
+			<StandardListItem 
+                   id="StandardListItem"
+				   title="{oBankDetails>cardCompany} {oBankDetails>cardNo}"
+				   description="{oBankDetails>cardtype} {oBankDetails>assignmentdate}"
+				   icon="sap-icon://credit-card"
+				   iconInset="false"
+				   highlight="{=${oBankDetails>state} === true ? 'Success' : 'Error' }"
+				   info="{=${oBankDetails>state} === true ? 'Active' : 'Expired' }"
+				   infoState="{=${oBankDetails>state} === true ? 'Success' : 'Error' }"
+				   infoStateInverted="true" />
+      
+		</items>
+	</List>
+			
+		</content>
+	</Panel>
+
+
+</core:FragmentDefinition>

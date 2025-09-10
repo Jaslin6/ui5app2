@@ -13,53 +13,10 @@
      <core:Fragment id="_IDGenFragment" 
         fragmentName= "ui5app2.view.fragments.BankDetails"
         type="XML"/>
-    
 
-      	<Panel id="Panel2" expandable="true" headerText="{i18n>Panel2title}" width="auto" class="sapUiResponsiveMargin">
-		<content>
-
-  <List
-            id="myList"
-		        items=""
-            width="60%">
-		<items>
-			<StandardListItem 
-           id="StandardListItem"
-				   title="Master Card (1234509876523456)"
-				   description="Debit Card: assigned on 01 Sep 2023"
-				   icon="sap-icon://credit-card"
-				   iconInset="false"
-				   highlight="Information"
-				   info="Active"
-				   infoState="Information"
-				   infoStateInverted="true" />
-
-      <StandardListItem 
-           id="StandardListItem2"
-				   title="Visa (0987657687653547)"
-				   description="Credit Card: assigned on 06 Jun 2024"
-				   icon="sap-icon://credit-card"
-				   iconInset="false"
-				   highlight="Error"
-				   info="Expired"
-				   infoState="Error"
-				   infoStateInverted="true" />
-
-      <StandardListItem 
-           id="StandardListItem3"
-				   title="Master Card (4573256780987654)"
-				   description="Debit Card: assigned on 09 Oct 2024"
-				   icon="sap-icon://credit-card"
-				   iconInset="false"
-				   highlight="Success"
-				   info="Active"
-				   infoState="Success"
-				   infoStateInverted="true" />          
-		</items>
-	</List>
-			
-		</content>
-	</Panel>
+	<core:Fragment id="_IDGenFragment1" 
+        fragmentName= "ui5app2.view.fragments.CardDetails"
+        type="XML"/>	
 
 
       </content>
