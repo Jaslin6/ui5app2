@@ -38,5 +38,9 @@
                         "assignmentdate": "assigned on 09 Oct 2024",
                         "state": true
                     }
-                   ]
+                   ],
+                   "housespending": 40000,
+                   "emi": 21500,
+                   "entertainment": 38500,
+                   "empsalary": 100000
                 }                  

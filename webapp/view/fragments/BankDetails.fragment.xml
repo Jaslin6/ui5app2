@@ -1,13 +1,15 @@
 <core:FragmentDefinition
 xmlns:core = "sap.ui.core"
-xmlns= "sap.m">
+xmlns= "sap.m"
+xmlns:m="sap.suite.ui.microchart"
+xmlns:layout="sap.ui.layout">
 
 <Panel id="Panel" expandable="false"  width="95%" class="sapUiResponsiveMargin">
       
       <content> 
 
       <HBox id="_IDGenHBox1" >
-      <Avatar id="Avatar" src=""  displaySize="XL" showBorder="true" press="onPress" />
+      <Avatar id="Avatar" src="{profileModel>/profile}"  displaySize="XL" showBorder="true" press="onPress" />
 
   
       <VBox id="_IDGenVBox1"  binding="{oBankDetails>/bankDetails}"  class="sapUiSmallMargin  sapUiLargeMarginBegin" >
@@ -31,6 +33,30 @@ xmlns= "sap.m">
        <Button id="_IDGenButton3" text="{i18n>info}" type="Neutral" press=".onOpenDialog"/>
       </VBox> 
 
+
+       <FlexBox id="FlexBox1" width="20rem" height="10rem"  alignItems="Start" justifyContent="SpaceBetween">
+		<items>
+			<m:InteractiveDonutChart id="DonutChart" selectionChanged="onSelectionChanged">
+				<m:segments>
+					<m:InteractiveDonutChartSegment id="DonutChartSegment" label="{i18n>houseExpense}" 
+                                          value="{path: 'oBankDetails>/housespending', formatter: '.formatter.getPercentage'}" 
+                                          displayedValue="{path: 'oBankDetails>/housespending', formatter: '.formatter.getPercentage'}%" 
+                                          color="{path: 'oBankDetails>/housespending', formatter: '.formatter.getState'}" />
+
+					<m:InteractiveDonutChartSegment id="DonutChartSegment1" label="{i18n>EMI}" 
+                                          value="{path: 'oBankDetails>/emi', formatter: '.formatter.getPercentage'}"
+                                          displayedValue="{path: 'oBankDetails>/emi', formatter: '.formatter.getPercentage'}%" 
+                                          color="{path: 'oBankDetails>/emi', formatter: '.formatter.getState'}" />
+
+					<m:InteractiveDonutChartSegment id="DonutChartSegment2" label="{i18n>entertainment}" 
+                                          value="{path: 'oBankDetails>/entertainment', formatter: '.formatter.getPercentage'}" 
+                                          displayedValue="{path: 'oBankDetails>/entertainment', formatter: '.formatter.getPercentage'}%" 
+                                          color="{path: 'oBankDetails>/entertainment', formatter: '.formatter.getState'}" />
+				</m:segments>
+			</m:InteractiveDonutChart>
+		</items>
+	</FlexBox>
+      
 
       </HBox>
 
