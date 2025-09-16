@@ -8,13 +8,12 @@
     "sapui5"
   ],
   "main": "webapp/index.html",
-  "dependencies": {},
   "devDependencies": {
+    "@sap/ux-ui5-tooling": "^1.18.7",
     "@ui5/cli": "^4.0.16",
-    "@sap/ux-ui5-tooling": "1",
-    "ui5-task-zipper": "^3.4.x",
+    "mbt": "^1.2.29",
     "rimraf": "^5.0.5",
-    "mbt": "^1.2.29"
+    "ui5-task-zipper": "^3.4.x"
   },
   "scripts": {
     "start": "fiori run --open \"test/flp.html#app-preview\"",
