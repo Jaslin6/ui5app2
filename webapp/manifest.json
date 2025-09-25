@@ -31,7 +31,8 @@
           }
         }
   }
-},
+}, 
+
 
   "sap.ui": {
     "technology": "UI5",
@@ -55,7 +56,12 @@
       "minUI5Version": "1.139.0",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+         "sap.ui.mdc": {},
+         "sap.suite.ui.microchart": {},
+         "sap.ui.layout": {},
+         "sap.ui.core.mvc":{}
+         
       }
     },
     "contentDensities": {
@@ -121,6 +127,9 @@
       "type": "XML",
       "id": "App",
       "async": true
-    }
+    },
+    "sap.cloud": { 
+      "public": true, 
+      "service": "ui5app2" }
   }
 }

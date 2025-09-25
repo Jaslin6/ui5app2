@@ -34,6 +34,11 @@ resources:
     service: html5-apps-repo
     service-name: ui5app2-html5-service
     service-plan: app-host
+- name: ui5app2-html5-runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
 - name: ui5app2-destination-service
   type: org.cloudfoundry.managed-service
   parameters:
