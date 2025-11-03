@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: destinations-config
+data:
+  destinations: |
+    [
+      {
+        "name": "dest_kyma_multitenant_node",
+        "url": "https://b4a1b4fbtrial-node.api.c-006584a.kyma.ondemand.com",
+        "forwardAuthToken": true
+      }
+    ]

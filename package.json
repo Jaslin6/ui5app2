@@ -29,5 +29,9 @@
     "build:mta": "rimraf resources mta_archives && mbt build",
     "undeploy": "cf undeploy ui5app2 --delete-services --delete-service-keys --delete-service-brokers"
   },
-  "sapuxLayer": "CUSTOMER_BASE"
+  "sapuxLayer": "CUSTOMER_BASE",
+  "dependencies": {
+    "@sap/approuter": "^20.8.2",
+    "@sap/xsenv": "^6.0.0"
+  }
 }

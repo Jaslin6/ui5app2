@@ -1,0 +1,90 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kyma-multitenant-approuter-multitenancy
+    release: multitenancy
+  name: kyma-multitenant-approuter-multitenancy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyma-multitenant-approuter-multitenancy
+      release: multitenancy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kyma-multitenant-approuter-multitenancy
+        release: multitenancy
+        sidecar.istio.io/inject: "true" 
+    spec:
+      automountServiceAccountToken: false
+      imagePullSecrets:
+        - name: registry-secret   # replace with your own registry secret for Docker Hub
+      containers:
+      - env:
+        - name: destinations      # refer to the ConfigMap for destinations you created before
+          valueFrom:
+            configMapKeyRef:
+              name: destinations-config
+              key: destinations
+        - name: PORT
+          value: "8080"
+        - name: TMPDIR
+          value: /tmp
+        image: <docker-hub-account>/multitenant-approuter:v1   # replace with your Docker Hub account name
+        livenessProbe:
+          exec:
+            command:
+            - nc
+            - -z
+            - localhost
+            - "8080"
+          failureThreshold: 1
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 60
+        name: kyma-multitenant-approuter-multitenancy
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          exec:
+            command:
+            - nc
+            - -z
+            - localhost
+            - "8080"
+          failureThreshold: 1
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 60
+        resources:
+          limits:
+            ephemeral-storage: 256M
+            memory: 256M
+          requests:
+            cpu: 100m
+            ephemeral-storage: 256M
+            memory: 256M
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+      securityContext:
+        runAsNonRoot: true
+      volumes:
+      - emptyDir: {}
+        name: tmp
+status: {}
